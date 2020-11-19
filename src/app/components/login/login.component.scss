@@ -1,0 +1,111 @@
+.container {
+  width: 1440px;
+  height: 1138px;
+  background: linear-gradient(52.03deg, #7A7FC8 0%, #BD385B 100%);
+  padding-bottom: 376px;
+  margin-left: 31.5px;
+  padding-top: 1px;
+
+  .header {
+    background-color: #FFFFFF;
+    height: 100px;
+
+    .rectangle {
+      padding-top: 23px;
+      padding-bottom: 23px;
+      width: floor($number: 0);
+      opacity: 0.98;
+      box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    .robosoft-logo-horizontal-img-r {
+      height: 54px;
+      width: 280px;
+      margin-left: 130px;
+    }
+  }
+
+  .loginBox {
+    height: 385px;
+    width: 535px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    margin-top: 277px;
+    margin-left: 453px;
+    margin-right: 453px;
+    // padding-right: 453px;
+    box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+
+    .login {
+      height: 29px;
+      width: 64px;
+      color: #000000;
+      //    font-family: sans-serif;
+      font-size: 22.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 29px;
+      margin-left: 237px;
+      padding-top: 44px;
+      margin-bottom: 0%;
+    }
+
+    .inputBox1 {
+      height: 56px;
+      width: 116px;
+      border-radius: 4px;
+      border-color: rgba(0, 0, 0, 0.38);
+      border-width: 1.5px;
+      margin-left: 104px;
+      margin-top: 24px;
+      //    font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding-left: 16px;
+      padding-right: 196px;
+    }
+
+    .inputBox2 {
+      height: 56px;
+      width: 116px;
+      border-color: rgba(0, 0, 0, 0.38);
+      border-width: 1.5px;
+      border-radius: 4px;
+      margin-left: 104px;
+      margin-top: 19px;
+      //    font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      padding-left: 16px;
+      padding-right: 196px;
+    }
+
+    .btn-fab {
+      height: 48px;
+      width: 149px;
+      background-color: #D92756;
+      margin-left: 193px;
+      margin-top: 20px;
+      //  font-family: sans-serif;
+      color: white;
+      font-size: 14px;
+      border-radius: 25px;
+      letter-spacing: 1px;
+      border-color: transparent;
+      box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .forgot-password {
+      height: 14px;
+      width: 97px;
+      opacity: 0.8;
+      color: black;
+      //  font-family: sans-serif;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 14px;
+      margin-left: 219px;
+      margin-top: 12px;
+    }
+  }
+}
