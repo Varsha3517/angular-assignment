@@ -1,12 +1,10 @@
 .container {
-  width: 1440px;
-  height: 1138px;
-  padding-bottom: 376px;
-  margin-left: 30px;
-
+  background-color: #F7F7F7;
+  
   .header {
     background-color: #FFFFFF;
     height: 100px;
+    margin-left: 30px;
 
     .rectangle {
       padding-top: 23px;
@@ -20,6 +18,418 @@
       height: 54px;
       width: 280px;
       margin-left: 130px;
+    }
+  }
+
+  .container {
+    margin-top: 13px;
+    background-color: #F7F7F7;
+    width: 1440px;
+    height: 1025px;
+    margin-left: 30px;
+
+    .homeScreen {
+      height: 981px;
+
+      .box {
+        display: flex;
+        padding-top: 7px;
+
+        .box1 {
+          height: 476px;
+          width: 280px;
+          margin-left: 130px;
+          border-radius: 20px;
+          background-color: #FFFFFF;
+          border: 1px solid black;
+        }
+
+        .box2 {
+          height: 952px;
+          width: 880px;
+          margin-left: 20px;
+          border-radius: 20px;
+          background-color: #FFFFFF;
+          border: 1px solid black;
+          display: flex;
+
+          .left {
+            display: block;
+            height: 915px;
+            width: 580px;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 17px;
+
+            .rectangle1 {
+              height: 485px;
+              width: 580px;
+
+              .questionnaire {
+                height: 24px;
+                width: 127px;
+                opacity: 0.87;
+                color: #000000;
+                font-size: 20px;
+                font-weight: 500;
+                letter-spacing: 0.15px;
+                line-height: 24px;
+                margin-bottom: 0px;
+              }
+
+              .field1 {
+                height: 84px;
+                width: 580px;
+                margin-top: 25px;
+
+                .inputBox1 {
+                  position: relative;
+                  width: 50%;
+                }
+
+                .inputBox1 .inputText {
+                  height: 56px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-radius: 4px;
+                  border-color: rgba(0, 0, 0, 0.38);
+                  margin-top: 9px;
+                  outline: none;
+                  border: 1px solid #979797;
+                  font-size: 16px;
+                }
+
+                .inputBox1 .inputText:focus {
+                  border: 1px solid #979797;
+                  height: 56px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-width: 1px;
+                  font-size: 16px;
+                  color: black;
+                }
+
+                .inputBox1 .floating-label {
+                  position: absolute;
+                  pointer-events: none;
+                  top: 30px;
+                  left: 20px;
+                  transition: 0.2s ease all;
+                  font-size: 16px;
+                  color: #979797;
+                }
+
+                .inputBox1 input:focus~.floating-label,
+                .inputBox1 input:not(:focus):valid~.floating-label {
+                  width: 56px;
+                  height: 24px;
+                  padding-left: 2px;
+                  background-color: white;
+                  color: #979797;
+                  top: 0px;
+                  left: 15px;
+                  z-index: 999;
+                  font-size: 12px;
+                  opacity: 1;
+                }
+
+                .title {
+                  font-size: 13px;
+                  margin-left: 17px;
+                  color: #979797;
+                }
+              }
+
+              .field2 {
+                height: 130px;
+                width: 580px;
+                margin-top: 18px;
+
+                .inputBox2 {
+                  position: relative;
+                  width: 50%;
+                }
+
+                .inputBox2 .inputText {
+                  height: 102px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-radius: 4px;
+                  border-color: rgba(0, 0, 0, 0.38);
+                  margin-top: 9px;
+                  outline: none;
+                  border: 1px solid #979797;
+                  font-size: 16px;
+                }
+
+                .inputBox2 .inputText:focus {
+                  border: 1px solid #979797;
+                  height: 102px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-width: 1px;
+                  font-size: 16px;
+                  color: black;
+                }
+
+                .inputBox2 .floating-label {
+                  position: absolute;
+                  pointer-events: none;
+                  top: 30px;
+                  left: 20px;
+                  transition: 0.2s ease all;
+                  font-size: 16px;
+                  color: #979797;
+                }
+
+                .inputBox2 input:focus~.floating-label,
+                .inputBox2 input:not(:focus):valid~.floating-label {
+                  width: 62px;
+                  height: 24px;
+                  padding-left: 2px;
+                  background-color: white;
+                  color: #979797;
+                  top: 0px;
+                  left: 15px;
+                  z-index: 999;
+                  font-size: 12px;
+                  opacity: 1;
+                }
+              }
+
+              .field3 {
+                height: 84px;
+                width: 580px;
+                margin-top: 18px;
+                display: flex;
+                //              border: black 1px solid;
+
+                .field31 {
+                  height: 84px;
+                  width: 280px;
+                  margin-right: 17px;
+
+                  .inputBox31 {
+                    position: relative;
+                    width: 50%;
+                  }
+
+                  .inputBox31 .inputText {
+                    height: 56px;
+                    width: 262px;
+                    padding-left: 16px;
+                    border-radius: 4px;
+                    border-color: rgba(0, 0, 0, 0.38);
+                    margin-top: 9px;
+                    outline: none;
+                    border: 1px solid #979797;
+                    font-size: 16px;
+                  }
+
+                  .inputBox31 .inputText:focus {
+                    border: 1px solid #979797;
+                    height: 56px;
+                    width: 262px;
+                    padding-left: 16px;
+                    border-width: 1px;
+                    font-size: 16px;
+                    color: black;
+                  }
+
+                  .inputBox31 .floating-label {
+                    position: absolute;
+                    pointer-events: none;
+                    top: 30px;
+                    left: 20px;
+                    transition: 0.2s ease all;
+                    font-size: 16px;
+                    color: #979797;
+                  }
+
+                  .inputBox31 input:focus~.floating-label,
+                  .inputBox31 input:not(:focus):valid~.floating-label {
+                    width: 64px;
+                    height: 24px;
+                    padding-left: 2px;
+                    background-color: white;
+                    color: #979797;
+                    top: 0px;
+                    left: 15px;
+                    z-index: 999;
+                    font-size: 12px;
+                    opacity: 1;
+                  }
+                }
+
+                .field32 {
+                  height: 84px;
+                  width: 280px;
+
+                  .inputBox32 {
+                    position: relative;
+                    width: 50%;
+                  }
+
+                  .inputBox32 .inputText {
+                    height: 56px;
+                    width: 262px;
+                    padding-left: 16px;
+                    border-radius: 4px;
+                    border-color: rgba(0, 0, 0, 0.38);
+                    margin-top: 9px;
+                    outline: none;
+                    border: 1px solid #979797;
+                    font-size: 16px;
+                  }
+
+                  .inputBox32 .inputText:focus {
+                    border: 1px solid #979797;
+                    height: 56px;
+                    width: 262px;
+                    padding-left: 16px;
+                    border-width: 1px;
+                    font-size: 16px;
+                    color: black;
+                  }
+
+                  .inputBox32 .floating-label {
+                    position: absolute;
+                    pointer-events: none;
+                    top: 30px;
+                    left: 20px;
+                    transition: 0.2s ease all;
+                    font-size: 16px;
+                    color: #979797;
+                  }
+
+                  .inputBox32 input:focus~.floating-label,
+                  .inputBox32 input:not(:focus):valid~.floating-label {
+                    width: 64px;
+                    height: 24px;
+                    padding-left: 2px;
+                    background-color: white;
+                    color: #979797;
+                    top: 0px;
+                    left: 15px;
+                    z-index: 999;
+                    font-size: 12px;
+                    opacity: 1;
+                  }
+                }
+              }
+
+              .field4 {
+                height: 84px;
+                width: 580px;
+                margin-top: 18px;
+
+                .inputBox4 {
+                  position: relative;
+                  width: 50%;
+                }
+
+                .inputBox4 .inputText {
+                  height: 56px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-radius: 4px;
+                  border-color: rgba(0, 0, 0, 0.38);
+                  margin-top: 9px;
+                  outline: none;
+                  border: 1px solid #979797;
+                  font-size: 16px;
+                }
+
+                .inputBox4 .inputText:focus {
+                  border: 1px solid #979797;
+                  height: 56px;
+                  width: 559px;
+                  padding-left: 16px;
+                  border-width: 1px;
+                  font-size: 16px;
+                  color: black;
+                }
+
+                .inputBox4 .floating-label {
+                  position: absolute;
+                  pointer-events: none;
+                  top: 30px;
+                  left: 20px;
+                  transition: 0.2s ease all;
+                  font-size: 16px;
+                  color: #979797;
+                }
+
+                .inputBox4 input:focus~.floating-label,
+                .inputBox4 input:not(:focus):valid~.floating-label {
+                  width: 80px;
+                  height: 24px;
+                  padding-left: 2px;
+                  background-color: white;
+                  color: #979797;
+                  top: 0px;
+                  left: 15px;
+                  z-index: 999;
+                  font-size: 12px;
+                  opacity: 1;
+                }
+              }
+
+            }
+
+            .rectangle2 {
+              height: 393px;
+              width: 580px;
+              border: 1px black solid;
+              margin-top: 37px;
+            }
+          }
+
+          .rectangle3 {
+            height: 351px;
+            width: 230px;
+            margin-left: 30px;
+            margin-top: 20px;
+            border: 1px black solid;
+
+            .leftBar {
+              height: 350px;
+              width: 2px;
+              border-radius: 1px;
+              background-color: #D92756;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      height: 44px;
+      width: 1440px;
+      margin-top: 21px;
+      background-color: rgba(0, 0, 0, 0.02);
+
+      .rectangle {
+        height: 44px;
+        width: 1440px;
+        background-color: rgba(0, 0, 0, 0.02);
+        margin-left: 569px;
+        padding-top: 10px;
+
+        .robosoft-copyright {
+          height: 24px;
+          width: 352px;
+          color: rgba(0, 0, 0, 0.6);
+          font-family: Roboto;
+          font-size: 16px;
+          letter-spacing: 0.15px;
+          line-height: 24px;
+
+          .copyright {
+            color: black;
+          }
+        }
+      }
     }
   }
 }
