@@ -1,16 +1,200 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
-<div class="container">
+<!--<style>
+  #options {
+    z-index: -1;
+    position: absolute;
+  }
+
+  #screen {
+    position: absolute;
+    z-index: -2;
+  }
+</style>
+-->
+
+<div class="options" id="options">
+  <a routerLink="/change-password">
+    <button class="block1" style="font-family: Roboto;">Change Password</button>
+  </a>
+  <button class="block2" (click)="superAdmin()" style="font-family: Roboto;">Add/Remove Super Admins</button>
+  <button class="block3" (click)="admin()" style="font-family: Roboto;">Add/Remove Admins</button>
+  <button class="btn-fab" (click)="disappear()">x</button>
+</div>
+
+<div class="screen" id="screen"></div>
+
+<div class="superAdmin" id="superAdmin">
+
+  <img class="close" (click)="close()" src="../../../assets/close icon.png" alt="">
+  <p class="text" style="font-family: Roboto;">Add/Remove Super Admins</p>
+  <div class="block1">
+
+    <div class="box1">
+      <div class="inputBox11">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Name</span>
+      </div>
+    </div>
+
+    <div class="box2">
+      <div class="inputBox12">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
+      </div>
+    </div>
+
+    <div class="box3">
+      <div class="inputBox13">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Mail ID</span>
+      </div>
+    </div>
+    <button type="button" class="btn-fab" (click)="myFunction()">+</button>
+  </div>
+  <div class="bar"></div>
+  <div class="block2">
+
+    <div class="field1">
+      <p class="detail">Kevin</p>
+    </div>
+
+    <div class="field2">
+      <p class="detail">RT12345</p>
+    </div>
+
+    <div class="field3">
+      <p class="mail">kevin@robosoftin.com</p>
+    </div>
+
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/Edit.png" alt="">
+    </button>
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/download.png" alt="">
+    </button>
+
+  </div>
+  <div class="block3">
+
+    <div class="field1">
+      <p class="detail">John</p>
+    </div>
+
+    <div class="field2">
+      <p class="detail">RT23456</p>
+    </div>
+
+    <div class="field3">
+      <p class="mail">john@robosoftin.com</p>
+    </div>
+
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/Edit.png" alt="">
+    </button>
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/download.png" alt="">
+    </button>
+
+  </div>
+
+  <div class="buttons">
+    <button style="font-family: Roboto;" (click)="update()" class="btn-fab1">Update</button>
+    <button style="font-family: Roboto;" (click)="close()" class="btn-fab2">Cancel</button>
+  </div>
+</div>
+
+<!--Add/Remove Admins-->
+<div class="admin" id="admin">
+
+  <img class="close" (click)="close()" src="../../../assets/close icon.png" alt="">
+  <p class="text" style="font-family: Roboto;">Add/Remove Admins</p>
+  <div class="block1">
+
+    <div class="box1">
+      <div class="inputBox11">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Name</span>
+      </div>
+    </div>
+
+    <div class="box2">
+      <div class="inputBox12">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
+      </div>
+    </div>
+
+    <div class="box3">
+      <div class="inputBox13">
+        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Mail ID</span>
+      </div>
+    </div>
+    <button type="button" class="btn-fab" (click)="myFunction()">+</button>
+  </div>
+  <div class="bar"></div>
+  <div class="block2">
+
+    <div class="field1">
+      <p class="detail">Rob</p>
+    </div>
+
+    <div class="field2">
+      <p class="detail">RT54321</p>
+    </div>
+
+    <div class="field3">
+      <p class="mail">rob@robosoftin.com</p>
+    </div>
+
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/Edit.png" alt="">
+    </button>
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/download.png" alt="">
+    </button>
+
+  </div>
+  <div class="block3">
+
+    <div class="field1">
+      <p class="detail">Jane</p>
+    </div>
+
+    <div class="field2">
+      <p class="detail">RT98765</p>
+    </div>
+
+    <div class="field3">
+      <p class="mail">jane@robosoftin.com</p>
+    </div>
+
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/Edit.png" alt="">
+    </button>
+    <button type="button" class="btn-fab" (click)="myFunction()">
+      <img class="binIcon" src="../../../assets/download.png" alt="">
+    </button>
+
+  </div>
+
+  <div class="buttons">
+    <button style="font-family: Roboto;" (click)="update()" class="btn-fab1">Update</button>
+    <button style="font-family: Roboto;" (click)="close()" class="btn-fab2">Cancel</button>
+  </div>
+</div>
+
+<!--Container-->
+<div class="container" id="container">
   <div class="header">
-    <div class="rectangle">
-      <img class="robosoft-logo-horizontal-img-r" src="../../../assets/Robosoft_logo_horizontal.png" alt="">
+    <div class="rectangle1">
+      <img class="robosoft-logo" src="../../../assets/Robosoft_logo_horizontal.png" alt="">
     </div>
   </div>
 
   <div class="container">
-
     <div class="homeScreen">
-
       <div class="box">
         <div class="box1">
 
@@ -89,6 +273,7 @@
                     <input type="date" class="inputText" style="font-family: Roboto;" required />
                     <span class="floating-label" style="font-family: Roboto;">Select Start Date</span>
                   </div>
+                  <img class="calendar" src="../../../assets/datepicker calendar icon.png" alt="">
                 </div>
                 <div class="element2">
                   <div class="inputBox52">
@@ -107,13 +292,13 @@
               <div class="field6">
                 <div class="element4">
                   <div class="inputBox64">
-                    <input type="text" class="inputText" style="font-family: Roboto;" required />
+                    <input type="file" class="inputText" style="font-family: Roboto;" required />
                     <span class="floating-label" style="font-family: Roboto;">Select Content PPT File</span>
                   </div>
                 </div>
                 <div class="element5">
                   <div class="inputBox65">
-                    <input type="text" class="inputText" style="font-family: Roboto;" required />
+                    <input type="file" class="inputText" style="font-family: Roboto;" required />
                     <span class="floating-label" style="font-family: Roboto;">Select Content PPT File</span>
                   </div>
                 </div>
@@ -153,7 +338,8 @@
                 </div>
               </div>
             </div>
-            <button class="btn-fab">+</button>
+            <button type="button" class="btn-fab" (click)="options()">+</button>
+
           </div>
         </div>
       </div>
