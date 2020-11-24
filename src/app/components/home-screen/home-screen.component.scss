@@ -196,6 +196,15 @@
   }
 }
 
+@mixin calendar {
+  width: 32px;
+  height: 25px;
+  background-color: white;
+  top: -42px;
+  margin-left: 146px;
+  position: relative;
+}
+
 @mixin admin {
   height: 584px;
   width: 1034px;
@@ -424,12 +433,7 @@
   }
 
   .block2 {
-    margin-top: 31px;
-    @include details();
-  }
-
-  .block3 {
-    margin-top: 31px;
+    margin-top: 25px;
     @include details();
   }
 
@@ -448,15 +452,6 @@
       @include update-close();
     }
   }
-}
-
-@mixin calendar {
-  width: 32px;
-  height: 25px;
-  background-color: white;
-  top: -42px;
-  margin-left: 146px;
-  position: relative;
 }
 
 @mixin element51 {
@@ -566,16 +561,15 @@
   position: absolute;
 }
 
+//Add/Remove Admins
+
+.admin {
+  @include admin();
+}
 
 // Add/Remove Super Admins
 
 .superAdmin {
-  @include admin()
-}
-
-//Add/Remove Admins
-
-.admin {
   @include admin();
 }
 
