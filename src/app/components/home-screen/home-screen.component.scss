@@ -22,7 +22,8 @@
   margin-top: 12px;
 }
 
-// left-side-box blocks
+// left-side-blocks
+
 @mixin block {
   margin-top: 20px;
   margin-left: 20px;
@@ -48,7 +49,7 @@
   }
 }
 
-// right-side-box blocks
+// right-side-blocks
 
 @mixin right-block {
   height: 48px;
@@ -74,15 +75,520 @@
     line-height: 16px;
     margin-top: 16px;
     margin-left: 12px;
-
   }
 }
 
+@mixin block-options {
+  height: 33.6px;
+  width: 194.6px;
+  padding: 0px;
+  border: 0px;
+  position: 0;
+  background-color: #FDF4F6;
+  color: #D92756;
+  font-size: 9.8px;
+  font-weight: 500;
+  letter-spacing: 0.88px;
+  line-height: 11.2px;
+  text-align: center;
+  border-radius: 24px;
+  outline: none;
+}
+
+@mixin button {
+  height: 51px;
+  width: 51px;
+  background-color: #D92756;
+  margin-left: 20px;
+  margin-top: 0px;
+  color: white;
+  font-size: 30px;
+  border-radius: 50px;
+  outline: none;
+  padding: 0px;
+  border: 0px;
+
+  .icon {
+    height: 20px;
+    width: 20px;
+    padding-left: 2px;
+  }
+}
+
+// Add/Remove Super Admins fields
+
+@mixin fields {
+  height: 56px;
+  width: 208px;
+  border: 1px solid #9E9E9E;
+  border-radius: 4px;
+
+  .detail {
+    height: 19px;
+    width: 174.72px;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin-top: 19px;
+    margin-left: 18.18px;
+  }
+}
+
+@mixin update-close {
+  height: 49px;
+  width: 129px;
+  border: 0px;
+  padding: 0px;
+  background-color: #D92756;
+  margin-top: 0px;
+  color: white;
+  font-size: 14px;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin details {
+  width: 902px;
+  height: 56px;
+  margin-left: 61px;
+  display: flex;
+
+  .field1 {
+    @include fields();
+  }
+
+  .field2 {
+    @include fields();
+    margin-left: 19.5px;
+  }
+
+  .field3 {
+    height: 56px;
+    width: 305px;
+    margin-left: 19px;
+    border: 1px solid #9E9E9E;
+    border-radius: 4px;
+
+    .mail {
+      height: 19px;
+      width: 256.2px;
+      color: #000000;
+      font-family: Roboto;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 19px;
+      margin-top: 19px;
+      margin-left: 18.18px;
+    }
+  }
+
+  .btn-fab1 {
+    @include button();
+  }
+
+  .btn-fab2 {
+    @include button();
+  }
+}
+
+@mixin admin {
+  height: 584px;
+  width: 1034px;
+  position: absolute;
+  z-index: -5;
+  box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  margin-left: 244px;
+  margin-top: 277px;
+
+  .close {
+    width: 32px;
+    height: 27px;
+    margin-top: 18px;
+    margin-left: 991px;
+  }
+
+  .text {
+    height: 28px;
+    width: 297px;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-left: 61px;
+    margin-top: 20px;
+  }
+
+  .block1 {
+    height: 75px;
+    width: 835px;
+    margin-left: 60px;
+    margin-top: 32px;
+    display: flex;
+
+    .box1 {
+      height: 75px;
+      width: 209px;
+
+      .inputBox11 {
+        position: relative;
+        width: 50%;
+      }
+
+      .inputBox11 .inputText {
+        height: 56px;
+        width: 190px;
+        padding-left: 16px;
+        border-radius: 4px;
+        border-color: rgba(0, 0, 0, 0.38);
+        outline: none;
+        border: 1px solid #9E9E9E;
+        font-size: 16px;
+      }
+
+      .inputBox11 .inputText:focus {
+        border: 1px solid #9E9E9E;
+        height: 56px;
+        width: 190px;
+        padding-left: 16px;
+        border-width: 1px;
+        font-size: 16px;
+        color: black;
+      }
+
+      .inputBox11 .floating-label {
+        position: absolute;
+        pointer-events: none;
+        top: 21px;
+        left: 20px;
+        transition: 0.2s ease all;
+        font-size: 16px;
+        color: #979797;
+      }
+
+      .inputBox11 input:focus~.floating-label,
+      .inputBox11 input:not(:focus):valid~.floating-label {
+        width: 66px;
+        height: 24px;
+        padding-left: 2px;
+        background-color: white;
+        color: #979797;
+        top: -9px;
+        left: 15px;
+        font-size: 12px;
+        opacity: 1;
+      }
+    }
+
+    .box2 {
+      height: 75px;
+      width: 209px;
+      margin-left: 20px;
+
+      .inputBox12 {
+        position: relative;
+        width: 50%;
+      }
+
+      .inputBox12 .inputText {
+        height: 56px;
+        width: 190px;
+        padding-left: 16px;
+        border-radius: 4px;
+        border-color: rgba(0, 0, 0, 0.38);
+        outline: none;
+        border: 1px solid #9E9E9E;
+        font-size: 16px;
+      }
+
+      .inputBox12 .inputText:focus {
+        border: 1px solid #9E9E9E;
+        height: 56px;
+        width: 190px;
+        padding-left: 16px;
+        border-width: 1px;
+        font-size: 16px;
+        color: black;
+      }
+
+      .inputBox12 .floating-label {
+        width: 200px;
+        position: absolute;
+        pointer-events: none;
+        top: 21px;
+        left: 20px;
+        transition: 0.2s ease all;
+        font-size: 16px;
+        color: #979797;
+      }
+
+      .inputBox12 input:focus~.floating-label,
+      .inputBox12 input:not(:focus):valid~.floating-label {
+        width: 116px;
+        height: 24px;
+        padding-left: 2px;
+        background-color: white;
+        color: #979797;
+        top: -9px;
+        left: 15px;
+        font-size: 12px;
+        opacity: 1;
+      }
+    }
+
+    .box3 {
+      height: 75px;
+      width: 306px;
+      margin-left: 20px;
+
+      .inputBox13 {
+        position: relative;
+        width: 306px;
+      }
+
+      .inputBox13 .inputText {
+        height: 56px;
+        width: 286px;
+        padding-left: 16px;
+        border-radius: 4px;
+        border-color: rgba(0, 0, 0, 0.38);
+        outline: none;
+        border: 1px solid #9E9E9E;
+        font-size: 16px;
+      }
+
+      .inputBox13 .inputText:focus {
+        border: 1px solid #9E9E9E;
+        height: 56px;
+        width: 286px;
+        padding-left: 16px;
+        border-width: 1px;
+        font-size: 16px;
+        color: black;
+      }
+
+      .inputBox13 .floating-label {
+        width: 200px;
+        position: absolute;
+        pointer-events: none;
+        top: 21px;
+        left: 20px;
+        transition: 0.2s ease all;
+        font-size: 16px;
+        color: #979797;
+      }
+
+      .inputBox13 input:focus~.floating-label,
+      .inputBox13 input:not(:focus):valid~.floating-label {
+        width: 70px;
+        height: 24px;
+        padding-left: 2px;
+        background-color: white;
+        color: #979797;
+        top: -9px;
+        left: 15px;
+        font-size: 12px;
+        opacity: 1;
+      }
+    }
+
+    .btn-fab {
+      height: 51px;
+      width: 51px;
+      background-color: #D92756;
+      margin-left: 20px;
+      margin-top: 0px;
+      color: white;
+      font-size: 30px;
+      border-radius: 50px;
+      outline: none;
+      padding: 0px;
+      border: 0px;
+    }
+  }
+
+  .bar {
+    box-sizing: border-box;
+    height: 2px;
+    width: 1034px;
+    border: 1px dashed #A2A2A2;
+    opacity: 0.6;
+    margin-top: 14px;
+  }
+
+  .block2 {
+    margin-top: 31px;
+    @include details();
+  }
+
+  .block3 {
+    margin-top: 31px;
+    @include details();
+  }
+
+  .buttons {
+    margin-left: 538px;
+    height: 49px;
+    margin-top: 59px;
+
+    .update {
+      margin-left: 0px;
+      @include update-close();
+    }
+
+    .close {
+      margin-left: 32px;
+      @include update-close();
+    }
+  }
+}
+
+@mixin calendar {
+  width: 32px;
+  height: 25px;
+  background-color: white;
+  top: -42px;
+  margin-left: 146px;
+  position: relative;
+}
+
+@mixin element51 {
+  height: 84px;
+  width: 180px;
+
+  .inputBox51 {
+    position: relative;
+    width: 50%;
+  }
+
+  .inputBox51 .inputText {
+    height: 56px;
+    width: 164px;
+    padding-left: 16px;
+    border-radius: 4px;
+    border-color: rgba(0, 0, 0, 0.38);
+    margin-top: 9px;
+    outline: none;
+    border: 1px solid #979797;
+    font-size: 16px;
+  }
+
+  .inputBox51 .inputText:focus {
+    border: 1px solid #979797;
+    height: 56px;
+    width: 164px;
+    padding-left: 16px;
+    border-width: 1px;
+    font-size: 16px;
+    color: black;
+  }
+
+  .inputBox51 .floating-label {
+    width: 92px;
+    height: 24px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    left: 17px;
+    transition: 0.2s ease all;
+    font-size: 12px;
+    color: #979797;
+  }
+
+  .inputBox51 input:focus~.floating-label,
+  .inputBox51 input:not(:focus):valid~.floating-label {
+    width: 92px;
+    height: 24px;
+    background-color: white;
+    color: #979797;
+    top: 0px;
+    left: 17px;
+    font-size: 12px;
+    opacity: 1;
+  }
+}
+
+// Options
+
+.options {
+  height: 136px;
+  width: 198px;
+  margin-left: 1130px;
+  margin-top: 838px;
+  z-index: 1;
+  position: absolute;
+
+  .block1 {
+    @include block-options();
+  }
+
+  .block2 {
+    @include block-options();
+    margin-top: 15.4px;
+  }
+
+  .block3 {
+    @include block-options();
+    margin-top: 15.4px;
+  }
+
+  .btn-fab {
+    height: 51px;
+    width: 51px;
+    background-color: #D92756;
+    color: white;
+    font-size: 30px;
+    border-radius: 25px;
+    outline: none;
+    padding: 0px;
+    border: 0px;
+    margin-left: 145px;
+    margin-top: 26px;
+  }
+}
+
+// Screen
+
+.screen {
+  width: 1440px;
+  height: 1138px;
+  background-color: gray;
+  opacity: 0.5;
+  margin-left: 38px;
+  z-index: 3;
+  position: absolute;
+}
+
+
+// Add/Remove Super Admins
+
+.superAdmin {
+  @include admin()
+}
+
+//Add/Remove Admins
+
+.admin {
+  @include admin();
+}
+
+// Container
 
 .container {
   background-color: #F7F7F7;
   width: 100%;
   height: 100%;
+  z-index: 5;
+  position: absolute;
+
+// Header
 
   .header {
     background-color: #FFFFFF;
@@ -91,7 +597,7 @@
     margin-left: 38px;
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.14);
 
-    .rectangle {
+    .rectangle1 {
       padding-top: 23px;
       padding-bottom: 23px;
       width: floor($number: 0);
@@ -99,12 +605,16 @@
       box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.14);
     }
 
-    .robosoft-logo-horizontal-img-r {
+    .robosoft-logo {
       height: 54px;
       width: 280px;
       margin-left: 130px;
+      position: absolute;
+      z-index: 50;
     }
   }
+
+  // Home-Screen
 
   .container {
     margin-top: 13px;
@@ -264,7 +774,6 @@
                   color: #979797;
                   top: 0px;
                   left: 15px;
-                  z-index: 999;
                   font-size: 12px;
                   opacity: 1;
                 }
@@ -327,7 +836,6 @@
                   color: #979797;
                   top: 0px;
                   left: 15px;
-                  z-index: 999;
                   font-size: 12px;
                   opacity: 1;
                 }
@@ -389,7 +897,6 @@
                     color: #979797;
                     top: 0px;
                     left: 15px;
-                    z-index: 999;
                     font-size: 12px;
                     opacity: 1;
                   }
@@ -445,7 +952,6 @@
                     color: #979797;
                     top: 0px;
                     left: 15px;
-                    z-index: 999;
                     font-size: 12px;
                     opacity: 1;
                   }
@@ -502,12 +1008,10 @@
                   color: #979797;
                   top: 0px;
                   left: 15px;
-                  z-index: 999;
                   font-size: 12px;
                   opacity: 1;
                 }
               }
-
             }
 
             .rectangle2 {
@@ -525,124 +1029,27 @@
                 display: flex;
 
                 .element1 {
-                  height: 84px;
-                  width: 180px;
+                  margin-left: 0px;
+                  @include element51();
+                }
 
-                  .inputBox51 {
-                    position: relative;
-                    width: 50%;
-                  }
-
-                  .inputBox51 .inputText {
-                    height: 56px;
-                    width: 164px;
-                    padding-left: 16px;
-                    border-radius: 4px;
-                    border-color: rgba(0, 0, 0, 0.38);
-                    margin-top: 9px;
-                    outline: none;
-                    border: 1px solid #979797;
-                    font-size: 16px;
-                  }
-
-                  .inputBox51 .inputText:focus {
-                    border: 1px solid #979797;
-                    height: 56px;
-                    width: 164px;
-                    padding-left: 16px;
-                    border-width: 1px;
-                    font-size: 16px;
-                    color: black;
-                  }
-
-                  .inputBox51 .floating-label {
-                    width: 92px;
-                    height: 24px;
-                    background-color: white;
-                    position: absolute;
-                    top: 0px;
-                    left: 17px;
-                    transition: 0.2s ease all;
-                    font-size: 12px;
-                    color: #979797;
-                  }
-
-                  .inputBox51 input:focus~.floating-label,
-                  .inputBox51 input:not(:focus):valid~.floating-label {
-                    width: 92px;
-                    height: 24px;
-                    background-color: white;
-                    color: #979797;
-                    top: 0px;
-                    left: 17px;
-                    z-index: 999;
-                    font-size: 12px;
-                    opacity: 1;
-                  }
+                .calendar1 {
+                  @include calendar();
                 }
 
                 .element2 {
-                  height: 84px;
-                  width: 180px;
                   margin-left: 19px;
+                  @include element51();
+                }
 
-                  .inputBox52 {
-                    position: relative;
-                    width: 50%;
-                  }
-
-                  .inputBox52 .inputText {
-                    height: 56px;
-                    width: 164px;
-                    padding-left: 16px;
-                    border-radius: 4px;
-                    border-color: rgba(0, 0, 0, 0.38);
-                    margin-top: 9px;
-                    outline: none;
-                    border: 1px solid #979797;
-                    font-size: 16px;
-                  }
-
-                  .inputBox52 .inputText:focus {
-                    border: 1px solid #979797;
-                    height: 56px;
-                    width: 164px;
-                    padding-left: 16px;
-                    border-width: 1px;
-                    font-size: 16px;
-                    color: black;
-                  }
-
-                  .inputBox52 .floating-label {
-                    width: 88px;
-                    height: 24px;
-                    background-color: white;
-                    position: absolute;
-                    top: 0px;
-                    left: 17px;
-                    transition: 0.2s ease all;
-                    font-size: 12px;
-                    color: #979797;
-                  }
-
-                  .inputBox52 input:focus~.floating-label,
-                  .inputBox52 input:not(:focus):valid~.floating-label {
-                    width: 88px;
-                    height: 24px;
-                    background-color: white;
-                    color: #979797;
-                    top: 0px;
-                    left: 17px;
-                    z-index: 999;
-                    font-size: 12px;
-                    opacity: 1;
-                  }
+                .calendar2 {
+                  @include calendar();
                 }
 
                 .element3 {
+                  margin-left: 19px;
                   height: 84px;
                   width: 180px;
-                  margin-left: 19px;
 
                   .days {
                     color: #979797;
@@ -698,7 +1105,6 @@
                     color: #979797;
                     top: 0px;
                     left: 17px;
-                    z-index: 999;
                     font-size: 12px;
                     opacity: 1;
                   }
@@ -721,8 +1127,10 @@
 
                   .inputBox64 .inputText {
                     height: 56px;
-                    width: 262px;
-                    padding-left: 16px;
+                    width: 278px;
+                    padding-left: 0px;
+                    padding-top: 25px;
+                    color: transparent;
                     border-radius: 4px;
                     border-color: rgba(0, 0, 0, 0.38);
                     margin-top: 9px;
@@ -734,8 +1142,8 @@
                   .inputBox64 .inputText:focus {
                     border: 1px solid #979797;
                     height: 56px;
-                    width: 262px;
-                    padding-left: 16px;
+                    width: 278px;
+                    padding-left: -16px;
                     border-width: 1px;
                     font-size: 16px;
                     color: black;
@@ -755,13 +1163,13 @@
 
                   .inputBox64 input:focus~.floating-label,
                   .inputBox64 input:not(:focus):valid~.floating-label {
-                    width: 86px;
+                    width: 126px;
                     height: 18px;
                     background-color: white;
                     color: #979797;
                     top: 0px;
                     left: 17px;
-                    z-index: 999;
+                    //  z-index: 999;
                     font-size: 12px;
                     opacity: 1;
                   }
@@ -779,8 +1187,10 @@
 
                   .inputBox65 .inputText {
                     height: 56px;
-                    width: 262px;
-                    padding-left: 16px;
+                    width: 278px;
+                    padding-left: 0px;
+                    padding-top: 25px;
+                    color: transparent;
                     border-radius: 4px;
                     border-color: rgba(0, 0, 0, 0.38);
                     margin-top: 9px;
@@ -792,7 +1202,7 @@
                   .inputBox65 .inputText:focus {
                     border: 1px solid #979797;
                     height: 56px;
-                    width: 262px;
+                    width: 278px;
                     padding-left: 16px;
                     border-width: 1px;
                     font-size: 16px;
@@ -813,13 +1223,13 @@
 
                   .inputBox65 input:focus~.floating-label,
                   .inputBox65 input:not(:focus):valid~.floating-label {
-                    width: 86px;
+                    width: 126px;
                     height: 18px;
                     background-color: white;
                     color: #979797;
                     top: 0px;
                     left: 17px;
-                    z-index: 999;
+                    //  z-index: 999;
                     font-size: 12px;
                     opacity: 1;
                   }
@@ -873,7 +1283,7 @@
                   color: #979797;
                   top: -9px;
                   left: 15px;
-                  z-index: 999;
+                  //  z-index: 999;
                   font-size: 12px;
                   opacity: 1;
                 }
@@ -925,7 +1335,8 @@
               }
             }
           }
-          .btn-fab{
+
+          .btn-fab {
             height: 51px;
             width: 51px;
             background-color: #D92756;
@@ -943,10 +1354,12 @@
     }
   }
 
+  // Footer
+
   .footer {
     height: 44px;
     width: 1440px;
-    margin-top: 21px;
+    margin-top: 25px;
     background-color: rgba(0, 0, 0, 0.02);
 
     .rectangle {
@@ -954,7 +1367,8 @@
       width: 1440px;
       background-color: rgba(0, 0, 0, 0.02);
       margin-left: 569px;
-      padding-top: 10px;
+      padding-top: 12px;
+      margin-top: 0px;
 
       .robosoft-copyright {
         height: 24px;
