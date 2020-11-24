@@ -6,11 +6,65 @@
   <a routerLink="/change-password">
     <button class="block1" style="font-family: Roboto;">Change Password</button>
   </a>
-  <button class="block2" (click)="superAdmin()" style="font-family: Roboto;">Add/Remove Super Admins</button>
-  <button class="block3" (click)="admin()" style="font-family: Roboto;">Add/Remove Admins</button>
+  <button class="block2" (click)="superAdmins()" style="font-family: Roboto;">Add/Remove Super Admins</button>
+  <button class="block3" (click)="admins()" style="font-family: Roboto;">Add/Remove Admins</button>
   <button class="btn-fab" (click)="disappear()">x</button>
 </div>
 <div class="screen" id="screen"></div>
+
+<!--Add/Remove Admins-->
+
+<div class="admin" id="admin">
+  <img class="close" (click)="close()" src="../../../assets/close icon.png" alt="">
+  <p class="text" style="font-family: Roboto;">Add/Remove Admins</p>
+
+  <div class="block1">
+    <div class="box1">
+      <div class="inputBox11">
+        <input type="text" [(ngModel)]="admin.name" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Name</span>
+      </div>
+    </div>
+    <div class="box2">
+      <div class="inputBox12">
+        <input type="text" [(ngModel)]="admin.employeeCode" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
+      </div>
+    </div>
+    <div class="box3">
+      <div class="inputBox13">
+        <input type="text" [(ngModel)]="admin.mail" class="inputText" style="font-family: Roboto;" required />
+        <span class="floating-label" style="font-family: Roboto;">Enter Mail ID</span>
+      </div>
+    </div>
+    <button type="button" class="btn-fab" (click)="save1()">+</button>
+  </div>
+
+  <div class="bar"></div>
+
+  <div class="block2" *ngFor="let admin of adminlist">
+    <div class="field1">
+      <p class="detail"style="font-family: Roboto;">{{admin.name}}</p>
+    </div>
+    <div class="field2">
+      <p class="detail" style="font-family: Roboto;">{{admin.employeeCode}}</p>
+    </div>
+    <div class="field3">
+      <p class="mail" style="font-family: Roboto;">{{admin.mail}}</p>
+    </div>
+    <button type="button" class="btn-fab1" (click)="myFunction()">
+      <img class="icon" src="../../../assets/Edit.png" alt="">
+    </button>
+    <button type="button" class="btn-fab2" (click)="delete1(admin)">
+      <img class="icon" src="../../../assets/delete icon.png" alt="">
+    </button>
+  </div>
+
+  <div class="buttons">
+    <button style="font-family: Roboto;" (click)="update()" class="update">Update</button>
+    <button style="font-family: Roboto;" (click)="close()" class="close">Cancel</button>
+  </div>
+</div>
 
 <!--Add/Remove Super Admins-->
 
@@ -20,126 +74,45 @@
   <div class="block1">
     <div class="box1">
       <div class="inputBox11">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <input type="text" [(ngModel)]="s_admin.s_name" class="inputText" style="font-family: Roboto;" required />
         <span class="floating-label" style="font-family: Roboto;">Enter Name</span>
       </div>
     </div>
     <div class="box2">
       <div class="inputBox12">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <input type="text" [(ngModel)]="s_admin.s_employeecode" class="inputText" style="font-family: Roboto;" required />
         <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
       </div>
     </div>
     <div class="box3">
       <div class="inputBox13">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
+        <input type="text" [(ngModel)]="s_admin.s_mail" class="inputText" style="font-family: Roboto;" required />
         <span class="floating-label" style="font-family: Roboto;">Enter Mail ID</span>
       </div>
     </div>
-    <button type="button" class="btn-fab" (click)="myFunction()">+</button>
+    <button type="button" class="btn-fab" (click)="save2()">+</button>
   </div>
+  
   <div class="bar"></div>
-  <div class="block2">
+  
+  <div class="block2" *ngFor="let s_admin of superadminlist">
     <div class="field1">
-      <p class="detail" style="font-family: Roboto;">Kevin</p>
+      <p class="detail" style="font-family: Roboto;">{{s_admin.s_name}}</p>
     </div>
     <div class="field2">
-      <p class="detail" style="font-family: Roboto;">RT12345</p>
+      <p class="detail" style="font-family: Roboto;">{{s_admin.s_employeecode}}</p>
     </div>
     <div class="field3">
-      <p class="mail" style="font-family: Roboto;">kevin@robosoftin.com</p>
+      <p class="mail" style="font-family: Roboto;">{{s_admin.s_mail}}</p>
     </div>
     <button type="button" class="btn-fab1" (click)="myFunction()">
       <img class="icon" src="../../../assets/Edit.png" alt="">
     </button>
-    <button type="button" class="btn-fab2" (click)="myFunction()">
+    <button type="button" class="btn-fab2" (click)="delete2(s_admin)">
       <img class="icon" src="../../../assets/delete icon.png" alt="">
     </button>
   </div>
-  <div class="block3">
-    <div class="field1">
-      <p class="detail" style="font-family: Roboto;">John</p>
-    </div>
-    <div class="field2">
-      <p class="detail" style="font-family: Roboto;">RT23456</p>
-    </div>
-    <div class="field3">
-      <p class="mail" style="font-family: Roboto;">john@robosoftin.com</p>
-    </div>
-    <button type="button" class="btn-fab1" (click)="myFunction()">
-      <img class="icon" src="../../../assets/Edit.png" alt="">
-    </button>
-    <button type="button" class="btn-fab2" (click)="myFunction()">
-      <img class="icon" src="../../../assets/delete icon.png" alt="">
-    </button>
-  </div>
-  <div class="buttons">
-    <button style="font-family: Roboto;" (click)="update()" class="update">Update</button>
-    <button style="font-family: Roboto;" (click)="close()" class="close">Cancel</button>
-  </div>
-</div>
 
-<!--Add/Remove Admins-->
-
-<div class="admin" id="admin">
-  <img class="close" (click)="close()" src="../../../assets/close icon.png" alt="">
-  <p class="text" style="font-family: Roboto;">Add/Remove Super Admins</p>
-  <div class="block1">
-    <div class="box1">
-      <div class="inputBox11">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
-        <span class="floating-label" style="font-family: Roboto;">Enter Name</span>
-      </div>
-    </div>
-    <div class="box2">
-      <div class="inputBox12">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
-        <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
-      </div>
-    </div>
-    <div class="box3">
-      <div class="inputBox13">
-        <input type="text" class="inputText" style="font-family: Roboto;" required />
-        <span class="floating-label" style="font-family: Roboto;">Enter Mail ID</span>
-      </div>
-    </div>
-    <button type="button" class="btn-fab" (click)="myFunction()">+</button>
-  </div>
-  <div class="bar"></div>
-  <div class="block2">
-    <div class="field1">
-      <p class="detail"style="font-family: Roboto;">Rob</p>
-    </div>
-    <div class="field2">
-      <p class="detail" style="font-family: Roboto;">RT54321</p>
-    </div>
-    <div class="field3">
-      <p class="mail" style="font-family: Roboto;">rob@robosoftin.com</p>
-    </div>
-    <button type="button" class="btn-fab1" (click)="myFunction()">
-      <img class="icon" src="../../../assets/Edit.png" alt="">
-    </button>
-    <button type="button" class="btn-fab2" (click)="myFunction()">
-      <img class="icon" src="../../../assets/delete icon.png" alt="">
-    </button>
-  </div>
-  <div class="block3">
-    <div class="field1">
-      <p class="detail" style="font-family: Roboto;">Jane</p>
-    </div>
-    <div class="field2">
-      <p class="detail" style="font-family: Roboto;">RT98765</p>
-    </div>
-    <div class="field3">
-      <p class="mail" style="font-family: Roboto;">jane@robosoftin.com</p>
-    </div>
-    <button type="button" class="btn-fab1" (click)="myFunction()">
-      <img class="icon" src="../../../assets/Edit.png" alt="">
-    </button>
-    <button type="button" class="btn-fab2" (click)="myFunction()">
-      <img class="icon" src="../../../assets/delete icon.png" alt="">
-    </button>
-  </div>
   <div class="buttons">
     <button style="font-family: Roboto;" (click)="update()" class="update">Update</button>
     <button style="font-family: Roboto;" (click)="close()" class="close">Cancel</button>
