@@ -546,6 +546,13 @@
     border: 0px;
     margin-left: 145px;
     margin-top: 26px;
+
+    img{
+      width: 25px;
+      height: 25x;
+      padding-top: 6px;
+      padding-left: 1px;
+    }
   }
 }
 
@@ -582,7 +589,7 @@
   z-index: 5;
   position: absolute;
 
-// Header
+  // Header
 
   .header {
     background-color: #FFFFFF;
@@ -605,6 +612,33 @@
       margin-left: 130px;
       position: absolute;
       z-index: 50;
+    }
+
+    .userProfile {
+      height: 44px;
+      width: 123px;
+      margin-left: 1187px;
+      display: flex;
+
+      .username {
+        height: 24px;
+        width: 69px;
+        opacity: 0.87;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: 0.15px;
+        line-height: 24px;
+        margin-top: 11px;
+      }
+      
+      .userIcon{
+        box-sizing: border-box;
+        height: 44px;
+        width: 44px;
+        border: 2px solid #D92756;
+        border-radius: 50px;
+        margin-left: 10px;
+      }
     }
   }
 
@@ -1121,8 +1155,8 @@
 
                   .inputBox64 .inputText {
                     height: 56px;
-                    width: 278px;
-                    padding-left: 0px;
+                    width: 268px;
+                    padding-left: 10px;
                     padding-top: 25px;
                     color: transparent;
                     border-radius: 4px;
@@ -1136,7 +1170,7 @@
                   .inputBox64 .inputText:focus {
                     border: 1px solid #979797;
                     height: 56px;
-                    width: 278px;
+                    width: 268px;
                     padding-left: -16px;
                     border-width: 1px;
                     font-size: 16px;
@@ -1169,6 +1203,12 @@
                   }
                 }
 
+                .upload1 {
+                  @include calendar();
+                  margin-left: 230px;
+                  margin-top: -20px;
+                }
+
                 .element5 {
                   height: 84px;
                   width: 280px;
@@ -1181,8 +1221,8 @@
 
                   .inputBox65 .inputText {
                     height: 56px;
-                    width: 278px;
-                    padding-left: 0px;
+                    width: 268px;
+                    padding-left: 10px;
                     padding-top: 25px;
                     color: transparent;
                     border-radius: 4px;
@@ -1196,8 +1236,8 @@
                   .inputBox65 .inputText:focus {
                     border: 1px solid #979797;
                     height: 56px;
-                    width: 278px;
-                    padding-left: 16px;
+                    width: 268px;
+                    padding-left: 10px;
                     border-width: 1px;
                     font-size: 16px;
                     color: black;
@@ -1228,6 +1268,12 @@
                     opacity: 1;
                   }
                 }
+
+                .upload2 {
+                  @include calendar();
+                  margin-left: 230px;
+                  margin-top: -20px;
+                }
               }
 
               .field7 {
@@ -1238,7 +1284,7 @@
                 }
 
                 .inputBox7 .inputText {
-                  height: 144px;
+                  height: 116px;
                   width: 562px;
                   padding-left: 16px;
                   border-radius: 4px;
@@ -1250,7 +1296,7 @@
 
                 .inputBox7 .inputText:focus {
                   border: 1px solid #979797;
-                  height: 144px;
+                  height: 116px;
                   width: 562px;
                   padding-left: 16px;
                   border-width: 1px;
