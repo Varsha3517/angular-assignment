@@ -7,8 +7,8 @@ export const SUPERADMIN: Superadmin[] = [
         s_mail: "kevin@robosoftin.com"
     },
     {
-        s_name: "Sowmya",
+        s_name: "John",
         s_employeecode: "RT23456",
-        s_mail: "sowmya@robosoftin.com"
+        s_mail: "john@robosoftin.com"
     }
 ];
