@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
 import { AdminService } from 'src/app/service/admin.service';
 import { SuperadminService} from 'src/app/service/superadmin.service';
 import { Admin } from './admin';
@@ -90,8 +88,20 @@ export class HomeScreenComponent implements OnInit {
     document.getElementById('admin').style.zIndex = "5";
   }
 
-  myFunction(): void {
-    document.getElementById('container').style.zIndex = "-5";
+  editFunction1(admin: Admin): void {
+    this.adminlist.forEach((item, index) => {
+      if (item === admin) {
+        this.adminlist.splice(index, 1);
+      }
+    });
+  }
+
+  editFunction2(s_admin: Superadmin): void {
+    this.superadminlist.forEach((item, index) => {
+      if (item === s_admin) {
+        this.superadminlist.splice(index, 1);
+      }
+    });
   }
 
   save1() {
