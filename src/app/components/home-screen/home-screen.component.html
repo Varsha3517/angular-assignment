@@ -8,7 +8,9 @@
   </a>
   <button class="block2" (click)="superAdmins()" style="font-family: Roboto;">Add/Remove Super Admins</button>
   <button class="block3" (click)="admins()" style="font-family: Roboto;">Add/Remove Admins</button>
-  <button class="btn-fab" (click)="disappear()">x</button>
+  <button class="btn-fab" (click)="disappear()">
+    <img class="close" (click)="close()" src="../../../assets/close-icon.png" alt="">
+  </button>
 </div>
 <div class="screen" id="screen"></div>
 
@@ -44,7 +46,7 @@
 
   <div class="block2" *ngFor="let admin of adminlist">
     <div class="field1">
-      <p class="detail"style="font-family: Roboto;">{{admin.name}}</p>
+      <p class="detail" style="font-family: Roboto;">{{admin.name}}</p>
     </div>
     <div class="field2">
       <p class="detail" style="font-family: Roboto;">{{admin.employeeCode}}</p>
@@ -52,7 +54,7 @@
     <div class="field3">
       <p class="mail" style="font-family: Roboto;">{{admin.mail}}</p>
     </div>
-    <button type="button" class="btn-fab1" (click)="myFunction()">
+    <button type="button" class="btn-fab1" (click)="editFunction1(admin)">
       <img class="icon" src="../../../assets/Edit.png" alt="">
     </button>
     <button type="button" class="btn-fab2" (click)="delete1(admin)">
@@ -80,7 +82,8 @@
     </div>
     <div class="box2">
       <div class="inputBox12">
-        <input type="text" [(ngModel)]="s_admin.s_employeecode" class="inputText" style="font-family: Roboto;" required />
+        <input type="text" [(ngModel)]="s_admin.s_employeecode" class="inputText" style="font-family: Roboto;"
+          required />
         <span class="floating-label" style="font-family: Roboto;">Enter Employee Code</span>
       </div>
     </div>
@@ -92,9 +95,9 @@
     </div>
     <button type="button" class="btn-fab" (click)="save2()">+</button>
   </div>
-  
+
   <div class="bar"></div>
-  
+
   <div class="block2" *ngFor="let s_admin of superadminlist">
     <div class="field1">
       <p class="detail" style="font-family: Roboto;">{{s_admin.s_name}}</p>
@@ -105,7 +108,7 @@
     <div class="field3">
       <p class="mail" style="font-family: Roboto;">{{s_admin.s_mail}}</p>
     </div>
-    <button type="button" class="btn-fab1" (click)="myFunction()">
+    <button type="button" class="btn-fab1" (click)="editFunction2(s_admin)">
       <img class="icon" src="../../../assets/Edit.png" alt="">
     </button>
     <button type="button" class="btn-fab2" (click)="delete2(s_admin)">
@@ -128,6 +131,10 @@
   <div class="header">
     <div class="rectangle1">
       <img class="robosoft-logo" src="../../../assets/Robosoft_logo_horizontal.png" alt="">
+      <div class="userProfile">
+        <p class="username" style="font-family: Roboto;">Jane Doe</p>
+        <img class="userIcon" src="../../../assets/user.png" alt="">
+      </div>
     </div>
   </div>
 
@@ -224,19 +231,24 @@
                     <input type="file" class="inputText" style="font-family: Roboto;" required />
                     <span class="floating-label" style="font-family: Roboto;">Select Content PPT File</span>
                   </div>
+                  <img class="upload1" src="../../../assets/fileUpload.png" alt="">
                 </div>
                 <div class="element5">
                   <div class="inputBox65">
                     <input type="file" class="inputText" style="font-family: Roboto;" required />
                     <span class="floating-label" style="font-family: Roboto;">Select Content PPT File</span>
                   </div>
+                  <img class="upload2" src="../../../assets/fileUpload.png" alt="">
                 </div>
               </div>
               <div class="field7">
+
                 <div class="inputBox7">
                   <input type="text" class="inputText" style="font-family: Roboto;" required />
                   <span class="floating-label" style="font-family: Roboto;">Mail Body</span>
                 </div>
+
+
               </div>
             </div>
           </div>
@@ -283,3 +295,17 @@
     </div>
   </div>
 </div>
+
+<!--   <mat-form-field class="input-area-small pr-1" appearance="outline">
+    <mat-label>Select Start Date</mat-label>
+    <input matInput>
+      </mat-form-field>
+
+  <mat-form-field class="input-area-small pr-1" appearance="outline">
+    <mat-label>Select Start Date</mat-label>
+    <input matInput [matDatepicker]="picker1">
+    <mat-datepicker-toggle matSuffix class="icon-pink" [for]="picker1">
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+-->
