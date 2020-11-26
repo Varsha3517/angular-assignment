@@ -11,7 +11,7 @@ import { CheckEmailComponent } from './components/check-email/check-email.compon
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SampleComponent } from './components/sample/sample.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
@@ -20,6 +20,8 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
   
 
 @NgModule({
@@ -38,12 +40,14 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatFormFieldModule, 
     MatDatepickerModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
